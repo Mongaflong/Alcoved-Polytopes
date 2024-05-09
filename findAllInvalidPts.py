@@ -23,7 +23,7 @@ def findInvalidPts(maxc1):
         maxxb = int(c1)
         print(c1)
         solutionFound = False
-        for c2 in numpy.arange(int(c1*c1*0.25),int((c1*c1)/3)+1,0.5):      #int(c1*c1*0.25)
+        for c2 in numpy.arange(c1-1,int((c1*c1)/3)+1,0.5):      #int(c1*c1*0.25)
                 solutionFound = False
 
                 if math.trunc(c1) == c1 and math.trunc(c2) == c2:
@@ -56,15 +56,17 @@ def findInvalidPts(maxc1):
                                 a = c1 - b + (k1+k2)*0.5
                                 if f == 0 and a >= k1 and a >= k2 and a == math.trunc(a):
                                     solutionFound = True
+                                    #valid points
                                     validc1.append(c1)
                                     validc2.append(c2)
                                     break
                                 elif b == maxxb-1 and k1 == b and k2 == b:
+                                    #non-valid
                                     c1list.append(c1)
                                     c2list.append(c2)
                                     
     plt.plot(c1list,c2list,'.r')
-    plt.plot(validc1,validc2,'.b')
+    #plt.plot(validc1,validc2,'.b')
     plt.show()
     
 findInvalidPts(30)
