@@ -68,5 +68,4 @@ def findInvalidPts(maxc1):
     plt.plot(c1list,c2list,'.r')
     #plt.plot(validc1,validc2,'.b')
     plt.show()
-    
 findInvalidPts(30)
